@@ -1,26 +1,70 @@
-table {
-    border-collapse: collapse;
+/* Add these styles to your existing CSS */
+
+/* Update table styles */
+
+/* Existing styles... */
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  table {
     width: 100%;
   }
-  th, td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  button, button a {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 0 10px; 
-    background-color: #3498db;
-    color: white;
-    text-decoration: none !important;
-    border-radius: 5px;
-    border: none;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover, button a:hover {
-    background-color: #2980b9;
-  }
-  
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+  background-color: #f5f5f5;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #3498db;
+  color: white;
+}
+
+/* Update button styles */
+button, button a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none !important;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+button:hover, button a:hover {
+  background-color: #2980b9;
+}
+
+/* Update header and content styles */
+h1 {
+  color: #3498db;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+.display-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.buttons {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Add more specific styles if needed */

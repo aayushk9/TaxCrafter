@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+  }
+
+  .Add-Cart input[type="text"],
+    .Add-Cart button {
+      display: inline-block;
+      vertical-align: top;
+      margin-bottom: 10px; 
+    }
+
+    .Add-Cart input[type="text"] {
+      width: calc(100% - 120px); 
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .Add-Cart button {
+      width: 100px;
+      padding: 8px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+  input[type="text"] {
+    width: calc(100% - 90px); 
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    width: 100px;
+    padding: 8px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #2980b9;
+  }
