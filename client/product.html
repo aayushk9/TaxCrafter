@@ -1,1 +1,28 @@
-Hello
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Product Category - TaxCrafter</title>
+  <link rel="stylesheet" href="./css/category.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form action="#" method="post"> 
+        <div class="Add-Cart">
+            <label for="categorySelection">Select Category for Adding Product</label>
+            <select id="categorySelection" name="categorySelection">
+             <!-- Populate options with available categories -->
+             <option value="category1">Category 1</option>
+             <option value="category2">Category 2</option>
+            <!-- Add more options based on available categories -->
+           </select>
+           <br/>
+           <br/>
+            <h1>Add New Product</h1>
+            <input required="true" placeholder="Enter New Product" type="text">
+            <button type="button" onclick="addCategory()">Add Product</button>
+          
+        </div>
+    </form>
+</body>
+</html>
+    

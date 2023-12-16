@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GST Rate Management - TaxCrafter</title>
+    <link rel="stylesheet" href="./css/gst.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <h1>GST Rate Management</h1>
+
+    <div class="gst-rates-form">
+        <h2>Add/Edit GST Rates</h2>
+        <form id="gstForm">
+            <label for="categorySelection">Select Category</label>
+            <select id="categorySelection" name="categorySelection">
+                <option value="Food">Food</option>
+                <option value="Footwear">Footwear</option>
+                <option value="Electronics">Electronics</option>
+                <!-- Add more predefined options here -->
+            </select>
+
+            <label for="gstRate">Enter GST Rate</label>
+            <input type="text" id="gstRate" name="gstRate" placeholder="Enter GST Rate (%)">
+            
+            <button type="button" onclick="addGST()">Add GST Rate</button>
+        </form>
+
+        <!-- Add section for adding new categories -->
+        <hr>
+        <h2>Add New Category</h2>
+        <form id="newCategoryForm">
+            <label for="newCategoryName">New Category Name</label>
+            <input type="text" id="newCategoryName" name="newCategoryName" placeholder="Enter New Category Name">
+            
+            <label for="newCategoryGST">Enter GST Rate</label>
+            <input type="text" id="newCategoryGST" name="newCategoryGST" placeholder="Enter GST Rate (%)">
+            
+            <button type="button" onclick="addNewCategory()">Add New Category</button>
+        </form>
+    </div>
+</body>
+</html>

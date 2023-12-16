@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generated Bill - TaxCrafter</title>
+  <link rel="stylesheet" href="./css/bill.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Generated Bill</h1>
+  <table id="billTable">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Tax</th>
+        <th>Total Amount</th>
+      </tr>
+    </thead>
+    <tbody id="billData">
+      <!-- Data rows will be populated dynamically using JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    // Example JavaScript logic to retrieve data and populate the bill
+    // Assume data is received in the format: { product, category, price, tax, totalAmount }
+    const saleData = { 
+      product: 'Product 1',
+      category: 'Category 1',
+      price: '$50',
+      tax: '$5',
+      totalAmount: '$55'
+    };
+
+    // Function to generate the bill based on received data
+    function generateBill() {
+      const billData = document.getElementById('billData');
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${saleData.product}</td>
+        <td>${saleData.category}</td>
+        <td>${saleData.price}</td>
+        <td>${saleData.tax}</td>
+        <td>${saleData.totalAmount}</td>
+      `;
+      billData.appendChild(newRow);
+    }
+
+    // Call the generateBill function when the page loads or on button click
+    window.onload = generateBill;
+  </script>
+</body>
+</html>
