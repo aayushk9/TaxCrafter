@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  button, button a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px; 
+    background-color: #3498db;
+    color: white;
+    text-decoration: none !important;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover, button a:hover {
+    background-color: #2980b9;
+  }
+  
