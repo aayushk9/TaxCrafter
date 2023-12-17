@@ -30,6 +30,7 @@ Prerequisites
 # Database SetUp
 
 - Set up a MongoDB instance. (MongoDB Atlas)
+- Replace URI with your specific MongoDB URI
 - Connect the application to the MongoDB database.
 
 # Configuration
