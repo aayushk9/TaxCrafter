@@ -2,32 +2,26 @@
 <html>
 <head>
     <title>Sales - TaxCrafter</title>
-    <link rel="stylesheet" href="./css/sale.css"> <!-- Link your CSS file -->
+    <link rel="stylesheet" href="./css/sale.css">
 </head>
 <body>
     <h1>Sales</h1>
-
-    <div class="sale-form">
-        <h2>Record a Sale</h2>
-        <form id="saleForm">
+    <form id="saleForm" action="/sale.html" method="post">
+        <div class="sale-form">
+            <h2>Record a Sale</h2>
             <label for="productSelection">Select Product</label>
             <select id="productSelection" name="productSelection">
-            <!--Based on product lies in which category it will return tax-->
                 <option value="product1">Product 1</option>
                 <option value="product2">Product 2</option>
                 <!-- Add more predefined options here -->
             </select>
-
-
             <button type="button" onclick="calculateTax()">Calculate Tax</button>
-            
-<center>
-  <button class="bill" type="submit"><a href="./bill.html">Generate Bill</a></button>
-</center>
-        </form>
-    </div>
+            <center>
+                <button class="bill" type="submit">Generate Bill</button>
+            </center>
+        </div>
+    </form>
 
-    <script src="script.js"></script> <!-- Link your JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>
-

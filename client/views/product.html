@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form action="#" method="post"> 
+    <form action="/product.html" method="post"> 
         <div class="Add-Cart">
             <label for="categorySelection">Select Category for Adding Product</label>
             <select id="categorySelection" name="categorySelection">
@@ -18,8 +18,8 @@
            <br/>
            <br/>
             <h1>Add New Product</h1>
-            <input required="true" placeholder="Enter New Product" type="text">
-            <button type="button" onclick="addCategory()">Add Product</button>
+            <input name="name" required="true" placeholder="Enter New Product" type="text">
+            <button type="submit" onclick="addCategory()">Add Product</button>
           
         </div>
     </form>

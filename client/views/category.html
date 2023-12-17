@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <form action="#" method="post"> 
+    <form action="/category.html" method="post"> 
         <div class="Add-Cart">
             <h1>Add New Category</h1>
-            <input required="true" placeholder="Enter New Category" type="text">
-            <input placeholder="Enter GST Rate" type="text">
-            <button type="button" onclick="addCategory()">Add</button>
+            <input name="category" required="true" placeholder="Enter New Category" type="text">
+            <input name="gstRate" placeholder="Enter GST Rate (Do not add %)" type="text">
+            <button type="submit" onclick="addCategory()">Add</button>
         </div>
     </form>
 </body>
