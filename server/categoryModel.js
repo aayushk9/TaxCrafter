@@ -13,7 +13,7 @@ const categorySchema = new mongoose.Schema({
     }
 });
 
-// Create a model based on the schema
+// Creating a model based on the schema
 const Category = mongoose.model('Category', categorySchema);
 
-module.exports = Category;
+module.exports = Category; // exporting module

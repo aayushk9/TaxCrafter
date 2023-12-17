@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
     name: String
 });
 
-// Create a model based on the schema
+// Creating a model based on the schema
 const Product = mongoose.model('Product', productSchema);
 
-module.exports = Product;
+module.exports = Product; // exporting model
