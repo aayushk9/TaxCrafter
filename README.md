@@ -27,6 +27,11 @@ Prerequisites
 - Start the application: node app.js
 - Access the application via browser at http://localhost:3000
 
+# Database SetUp
+
+- Set up a MongoDB instance. (MongoDB Atlas)
+- Connect the application to the MongoDB database.
+
 # Configuration
 
 - Configure environment variables for MongoDB connection.
