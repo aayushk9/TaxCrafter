@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, '../client/public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const URI = 'mongodb+srv://ayushkokate1:JvDBoR24KCyiyyO4@cluster0.wklhgaa.mongodb.net/?retryWrites=true&w=majority';
+const URI = process.env.MONGODB_URI;
 
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -119,7 +119,3 @@ app.get('/gst.html', (req, res)=>{
 app.post('/gst.html', (req, res)=>{
 
 })
-
-
-// JvDBoR24KCyiyyO4 pass and ayushkokate1 username
-//mongodb+srv://ayushkokate1:Sos71ADD8aPYiL8e@cluster0.iuyaryp.mongodb.net/taxdata?retryWrites=true&w=majority
