@@ -1,4 +1,5 @@
 require('dotenv').config()
+// All the necessary modules for our software are required below
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -10,12 +11,16 @@ const Product = require('./productModel')
 const GST = require('./gstModel')
 const Sale = require('./saleModel');
 
+//  joins client to server
 app.use(express.static(path.join(__dirname, '../client/public')));
+// Used for Body parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// database 
 const URI = process.env.MONGODB_URI;
 
+// connection to database
 mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to Database');
@@ -29,10 +34,12 @@ app.listen(port, ()=>{
     console.log(`Server is listening on port ${port}`);
 })
 
+// Home path which sends us to home.html page
 app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, '../client/views/home.html'));
 });
 
+// This is category route in our software
 app.get('/category.html', (req ,res)=>{
     res.sendFile(path.join(__dirname, '../client/views/category.html'))
 });
@@ -58,6 +65,7 @@ app.post('/category.html', async(req, res) => {
 });
 
 
+// This is Product Route for our software
 app.get('/product.html', (req, res)=>{
     res.sendFile(path.join(__dirname, '../client/views/product.html'));
 })
@@ -66,16 +74,18 @@ app.get('/product.html', (req, res)=>{
 app.post('/product.html', async (req, res)=>{
     const { productName } = req.body;
 
+    //  When user adds product all the functiuonalities happen here in try catch
     try {
-        const newProduct = new Product({
+        const newProduct = new Product({  // creating instance
             name: productName,
         });
 
-        await newProduct.save();
+        await newProduct.save(); // saving product to database
 
         console.log('Product added successfully to the database');
         res.send('Product added successfully and saved to the database!');
     } catch (err) {
+        // handling error
         console.error('Error occurred while adding product to the database:', err);
         res.status(500).send('Error occurred while adding the product.');
     }
@@ -83,7 +93,7 @@ app.post('/product.html', async (req, res)=>{
 
 app.get('/sale.html', async(req, res)=>{
     const filePath = path.join(__dirname, '../client/views/sale.html');
-    // needed to console log because was unable to render it from web page 
+    // Sends console log statemnts to our devloper terminal
     console.log(`Attempting to send file from: ${filePath}`);
 
     res.sendFile(filePath, (err) => {
@@ -142,43 +152,39 @@ app.post('/sale.html', async (req, res)=>{
     }
     
 
-    const { productSelection } = req.body;
-
     try {
-        // Assuming you have a function to fetch the category based on the product
+        //function to fetch the category based on the product
         const category = getCategoryForProduct(productSelection); // Implement this function
 
-        // Calculate tax based on the category (you'll need to implement this logic)
-        const tax = calculateTaxForCategory(category); // Implement this function
+        // Calculating tax based on the category 
+        const tax = calculateTaxForCategory(category);
 
-        // Create a new Sale document and save it to the database
+        // Creating a new Sale document and saving it to the database
         const newSale = new Sale({
             product: productSelection,
             category: category,
             tax: tax,
-            // Add other relevant fields for the sale
         });
 
-        await newSale.save();
+        await newSale.save(); // saved the user data of sale to our database
 
-        console.log('Sale recorded successfully');
-        res.send('Sale recorded successfully!');
+        console.log('Sale recorded successfully'); // user friendly messages
+        res.send('Sale recorded successfully!'); // user friendly messages
     } catch (err) {
-        console.error('Error occurred while recording sale:', err);
+        // handling error if some technical or user error occurs
+        console.error('Error occurred while recording sale:', err); 
         res.status(500).send('Error occurred while recording the sale.');
     }
 });
-
-    
-
 
 app.get('/gst.html', (req, res)=>{
     const filePath = path.join(__dirname, '../client/views/gst.html');
     // needed to console log because was unable to render it from web page 
     console.log(`Attempting to send file from: ${filePath}`);
 
+    // for developer's terminal use
     res.sendFile(filePath, (err) => {
-        if (err) { // if some error while browsing to sale route console log the error
+        if (err) { 
             console.error(err);
             res.status(err.status).end();
         } else {
@@ -192,14 +198,13 @@ app.post('/gst.html', async(req, res)=>{
     const { categorySelection, gstRate } = req.body;
 
     try {
-        // Assuming you have a model named GSTRate
-        // Create a new GSTRate document and save it to the database
+        // Creating a new GSTRate document and saving it to the database
         const newGSTRate = new GST({
             category: categorySelection,
             rate: gstRate
         });
 
-        await newGSTRate.save();
+        await newGSTRate.save(); // saving user gst rate to our database
 
         console.log('GST Rate added successfully to the database');
         res.send('GST Rate added successfully and saved to the database!');
