@@ -23,10 +23,8 @@
     <tbody id="billData">
     </tbody>
   </table>
-
-    
-    
-
+  
+   <script>
     // Function to generate the bill based on received data
     function generateBill() {
       const billData = document.getElementById('billData');
@@ -40,7 +38,6 @@
       `;
       billData.appendChild(newRow);
     }
-
     // Call the generateBill function when the page loads or on button click
     window.onload = generateBill;
   </script>
