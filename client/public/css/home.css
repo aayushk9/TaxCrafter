@@ -1,10 +1,4 @@
-/* Add these styles to your existing CSS */
 
-/* Update table styles */
-
-/* Existing styles... */
-
-/* Responsive styles */
 @media only screen and (max-width: 600px) {
   table {
     width: 100%;
@@ -29,7 +23,6 @@ th {
   color: white;
 }
 
-/* Update button styles */
 button, button a {
   display: inline-block;
   padding: 10px 20px;
@@ -47,7 +40,6 @@ button:hover, button a:hover {
   background-color: #2980b9;
 }
 
-/* Update header and content styles */
 h1 {
   color: #3498db;
   font-family: sans-serif;
@@ -67,4 +59,4 @@ h2 {
   margin-top: 40px;
 }
 
-/* Add more specific styles if needed */
+
