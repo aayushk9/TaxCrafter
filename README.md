@@ -31,6 +31,9 @@ Prerequisites
 
 - Set up a MongoDB instance. (MongoDB Atlas)
 - Replace URI with your specific MongoDB URI
+- .env File Configuration: Create a .env file in root directory
+- Struture of .env file -> MONGODB_URI = your_mongodb_uri_here
+- Code Implementation -> load .env package in app.js and than save URI as const URI= process.env.MONGODB_URI
 - Connect the application to the MongoDB database.
 
 # Configuration
