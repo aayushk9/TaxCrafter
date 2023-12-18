@@ -10,14 +10,13 @@
         <div class="sale-form">
             <h2>Record a Sale</h2>
             <label for="productSelection">Select Product</label>
-            <select id="productSelection" name="productSelection">
-                <option value="product1">Crocs</option>
-                <option value="product2">iPhone</option>
-                <option value="product2">Hoddie</option>
-                <option value="product2">iPhone</option>
-                <option value="product2">Pizza</option>
-            </select>
-            <button type="submit">Calculate Tax</button>
+            <select id="productSelection" name="productSelection"> 
+                <option value="Crocs">Crocs</option>
+                <option value="iPhone">iPhone</option>
+                <option value="Hoddie">Hoddie</option>
+                <option value="Pizza">Pizza</option>
+            </select>            
+            <button type="submit" onclick="calculateTax()">Calculate Tax</button>
             <center>
                 <button class="bill" type="submit">Generate Bill</button>
             </center>
@@ -25,7 +24,24 @@
     </form>
 
     <script>
-       
+        function calculateTax() {
+            const selectedProduct = document.getElementById('productSelection').value;
+            // Additional logic for tax calculation if needed
+            // Send the selected product to backend via a POST request
+            fetch('/sale.html', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ productSelection: selectedProduct })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Handle response from backend if needed
+            })
+            .catch(error => console.error('Error:', error));
+        }
     </script>
 </body>
 </html>
