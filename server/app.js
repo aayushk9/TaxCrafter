@@ -31,7 +31,7 @@ mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 app.listen(port, ()=>{
-    console.log(`Server is listening on port ${port}`);
+    console.log(`Server is listening on port ${port}`);   
 })
 
 // Home path which sends us to home.html page
@@ -93,14 +93,14 @@ app.post('/product.html', async (req, res)=>{
 
 app.get('/sale.html', async(req, res)=>{
     const filePath = path.join(__dirname, '../client/views/sale.html');
-    // Sends console log statemnts to our devloper terminal
+    // Sends console log statemnts to devloper terminal
     console.log(`Attempting to send file from: ${filePath}`);
 
     res.sendFile(filePath, (err) => {
-        if (err) { // if some error while browsing to sale route console log the error
+        if (err) { 
             console.error(err);
             res.status(err.status).end();
-        } else {
+        }else {
             console.log('File sent successfully');
         }
     });
@@ -146,7 +146,7 @@ app.post('/sale.html', async (req, res)=>{
     
         // Calculate tax based on the tax rate (you can modify this logic)
         const price = 100; // Example price for the sale
-        const taxAmount = (price * taxRate) / 100; // Calculate tax amount
+        const taxAmount = (price * taxRate) / 100; // Calculates tax amount
     
         return taxAmount;
     }
@@ -154,7 +154,7 @@ app.post('/sale.html', async (req, res)=>{
 
     try {
         //function to fetch the category based on the product
-        const category = getCategoryForProduct(productSelection); // Implement this function
+        const category = getCategoryForProduct(productSelection); 
 
         // Calculating tax based on the category 
         const tax = calculateTaxForCategory(category);
