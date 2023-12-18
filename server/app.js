@@ -72,12 +72,12 @@ app.get('/product.html', (req, res)=>{
 
 // for handling post requests of product.html
 app.post('/product.html', async (req, res)=>{
-    const { productName } = req.body;
+    const { product } = req.body;
 
     //  When user adds product all the functiuonalities happen here in try catch
     try {
         const newProduct = new Product({  // creating instance
-            name: productName,
+            name: product
         });
 
         await newProduct.save(); // saving product to database
