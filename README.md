@@ -2,8 +2,6 @@
 
 This project is a software solution for managing Goods and Services Tax (GST) calculations for different product categories. The software has functionalities to create product categories, set GST rates, manage products within categories, record sales, and generate bills with calculated taxes.
 
-# Problem Statement
-
 The project aims to provide a system that allows users to:
 
 - Set different GST rates for various product categories.
