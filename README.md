@@ -17,12 +17,20 @@ Prerequisites
 
 # Installation
 
-- Clone the repository: git clone https://github.com/aayushk9/TaxCrafter.git
-- Install dependencies: npm install
-
+- Clone the repository:
+   ```bash
+    git clone https://github.com/aayushk9/TaxCrafter.git
+  ```
+- Install dependencies:
+    ```bash
+    npm install
+   ```
 # Usage 
 
-- Start the application: node app.js
+- Start the application:
+   ```bash
+   node app.js
+   ```
 - Access the application via browser at http://localhost:3000
 
 # Database SetUp
